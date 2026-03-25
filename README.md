@@ -44,3 +44,6 @@
 3/3/2026
 Port a mi cuenta de github.
 Git borrados ya que el proyecto se realizo en la cuenta del instituto
+
+25/03/2026
+Fallo corregido de la paginación

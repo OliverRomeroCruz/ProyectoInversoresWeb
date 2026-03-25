@@ -41,7 +41,8 @@
             <div class="row">
                 <div class="col-md-3">
                     <label for="busqueda" class="form-label">Buscar</label>
-                    <input type="text" name="busqueda" id="busqueda" class="form-control" value="{{ request('busqueda') }}" placeholder="Nombre o descripción">
+                    <input type="text" name="busqueda" id="busqueda" class="form-control" value="{{ request('busqueda') }}"
+                        placeholder="Nombre o descripción">
                 </div>
                 <div class="col-md-3">
                     <label for="estado" class="form-label">Estado</label>
@@ -53,11 +54,13 @@
                 </div>
                 <div class="col-md-3">
                     <label for="min_inversion" class="form-label">Mín. Inversión</label>
-                    <input type="number" name="min_inversion" id="min_inversion" class="form-control" value="{{ request('min_inversion') }}" min="0">
+                    <input type="number" name="min_inversion" id="min_inversion" class="form-control"
+                        value="{{ request('min_inversion') }}" min="0">
                 </div>
                 <div class="col-md-3">
                     <label for="max_inversion" class="form-label">Máx. Inversión</label>
-                    <input type="number" name="max_inversion" id="max_inversion" class="form-control" value="{{ request('max_inversion') }}" min="0">
+                    <input type="number" name="max_inversion" id="max_inversion" class="form-control"
+                        value="{{ request('max_inversion') }}" min="0">
                 </div>
             </div>
             <div class="row mt-3">
@@ -121,20 +124,22 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-center mb-4">
-                    <ul class="pagination">
-                        @foreach ($proyectos->getUrlRange(1, $proyectos->lastPage()) as $page => $url)
-                            <li class="page-item {{ $page == $proyectos->currentPage() ? 'active' : '' }}">
-                                <a class="page-link" href="{{ $url }}">{{ $page }}</a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
+
             @empty
                 <div class="col-md-12">
                     <p class="text-center">No hay proyectos disponibles.</p>
                 </div>
             @endforelse
+
+            <div class="d-flex justify-content-center mb-4">
+                <ul class="pagination">
+                    @foreach ($proyectos->getUrlRange(1, $proyectos->lastPage()) as $page => $url)
+                        <li class="page-item {{ $page == $proyectos->currentPage() ? 'active' : '' }}">
+                            <a class="page-link" href="{{ $url }}">{{ $page }}</a>
+                        </li>
+                    @endforeach
+                </ul>
+            </div>
         </div>
 
 
